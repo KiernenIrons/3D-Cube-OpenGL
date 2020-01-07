@@ -54,59 +54,59 @@ void Game::initialize()
 	glNewList(index, GL_COMPILE);
 	glBegin(GL_TRIANGLES);
 	{
-		glColor3f(0.0f, 1.0f, 1.0f);
-		glVertex3f(1.0f, 1.0f, 1.0f); //8
-		glVertex3f(-1.0f, 1.0f, 1.0f); //1
-		glVertex3f(-1.0f, -1.0f, 1.0f); //4
+		glColor3f(1.0f, 0.5f, 1.0f);
+		glVertex3f(-1.0f, -1.0f, 1.0f); //1
+		glVertex3f(1.0f, -1.0f, 1.0f); //2
+		glVertex3f(1.0f, 1.0f, 1.0f); //3                 2
 
-		glVertex3f(1.0f, 1.0f, 1.0f); //8
-		glVertex3f(-1.0f, -1.0f, 1.0f); //4
-		glVertex3f(1.0f, -1.0f, 1.0f); //7
+		glVertex3f(-1.0f, -1.0f, 1.0f); //1
+		glVertex3f(1.0f, 1.0f, 1.0f); //3 
+		glVertex3f(-1.0f, 1.0f, 1.0f); //4           1
+
+		glVertex3f(-1.0f, 1.0f, 1.0f); //4
+		glVertex3f(1.0f, 1.0f, 1.0f); //3            5
+		glVertex3f(1.0f, 1.0f, -1.0f); //7
+
+		glVertex3f(1.0f, 1.0f, -1.0f); //7
+		glVertex3f(-1.0f, 1.0f, -1.0f); //8
+		glVertex3f(-1.0f, 1.0f, 1.0f); //4               11
+
+		glColor3f(1.0f, 0.0f, 1.0f);
+		glVertex3f(-1.0f, 1.0f, -1.0f); //8
+		glVertex3f(1.0f, 1.0f, -1.0f); //7
+		glVertex3f(1.0f, -1.0f, -1.0f); //6
 
 		glColor3f(0.0f, 0.0f, 0.5f);
-		glVertex3f(1.0f, 1.0f, -1.0f); //5
-		glVertex3f(-1.0f, 1.0f, -1.0f); //2
-		glVertex3f(1.0f, 1.0f, 1.0f); //8
-
-		glVertex3f(1.0f, 1.0f, 1.0f);//8
-		glVertex3f(-1.0f, 1.0f, 1.0f);//1
-		glVertex3f(-1.0f, 1.0f, -1.0f); //2
-		
-		glColor3f(0.5f, 1.0f, 0.0f);
-		glVertex3f(-1.0f, -1.0f, -1.0f); //3
-		glVertex3f(1.0f, -1.0f, 1.0f); //7
-		glVertex3f(1.0f, -1.0f, -1.0f); //6
-		
-		glVertex3f(-1.0f, -1.0f, 1.0f); //4
-		glVertex3f(-1.0f, -1.0f, -1.0f); //3
-		glVertex3f(1.0f, -1.0f, 1.0f); //7
-		
-		glColor3f(1.0f, 0.5f, 1.0f);
-		glVertex3f(-1.0f, 1.0f, 1.0f); //1
-		glVertex3f(-1.0f, -1.0f, -1.0f); //3
-		glVertex3f(-1.0f, 1.0f, -1.0f); //2
-
-		glVertex3f(-1.0f, -1.0f, -1.0f); //3
-		glVertex3f(-1.0f, -1.0f, 1.0f); //4
-		glVertex3f(-1.0f, 1.0f, 1.0f); //1
-		
-		glColor3f(1.0f, 0.0f, 1.0f);
-		glVertex3f(1.0f, 1.0f, 1.0f); //8////////////////////////////////////////////
-		glVertex3f(1.0f, 1.0f, -1.0f); //5
-		glVertex3f(1.0f, -1.0f, 1.0f); //7
+		glVertex3f(1.0f, -1.0f, -1.0f); //6              7
+		glVertex3f(-1.0f, -1.0f, -1.0f); //5
+		glVertex3f(-1.0f, 1.0f, -1.0f); //8
 
 		glVertex3f(1.0f, -1.0f, -1.0f); //6
-		glVertex3f(1.0f, -1.0f, 1.0f); //7
-		glVertex3f(1.0f, 1.0f, -1.0f); //5////////////////////////////////////////////
-		
+		glVertex3f(-1.0f, -1.0f, 1.0f); //1            9
+		glVertex3f(-1.0f, -1.0f, -1.0f); //5
+
 		glColor3f(0.5f, 1.0f, 0.5f);
-		glVertex3f(1.0f, 1.0f, -1.0f); //5
-		glVertex3f(-1.0f, 1.0f, -1.0f); //2
-		glVertex3f(1.0f, 1.0f, -1.0f); //6
-
-		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(-1.0f, -1.0f, 1.0f);//1 
 		glVertex3f(1.0f, -1.0f, -1.0f); //6
-		glVertex3f(-1.0f, 1.0f, -1.0f); //2
+		glVertex3f(1.0f, -1.0f, 1.0f); //2
+
+		glVertex3f(1.0f, 1.0f, -1.0f); //7
+		glVertex3f(1.0f, -1.0f, 1.0f); //2
+		glVertex3f(1.0f, -1.0f, -1.0f); //6           3
+
+		glColor3f(0.5f, 1.0f, 0.0f);
+		glVertex3f(1.0f, 1.0f, -1.0f); //7            4
+		glVertex3f(1.0f, 1.0f, 1.0f); //3 
+		glVertex3f(1.0f, -1.0f, 1.0f); //2
+
+		glColor3f(0.0f, 1.0f, 1.0f);
+		glVertex3f(-1.0f, -1.0f, -1.0f); //5
+		glVertex3f(-1.0f, -1.0f, 1.0f); //1                   12
+		glVertex3f(-1.0f, 1.0f, 1.0f); //4
+
+		glVertex3f(-1.0f, 1.0f, -1.0f); //8
+		glVertex3f(-1.0f, -1.0f, -1.0f); //5                6
+		glVertex3f(-1.0f, 1.0f, 1.0f); //4
 	}
 
 	glEnd();
