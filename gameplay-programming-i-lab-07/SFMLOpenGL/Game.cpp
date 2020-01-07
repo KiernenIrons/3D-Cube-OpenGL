@@ -44,6 +44,8 @@ void Game::initialize()
 	glLoadIdentity();
 	gluPerspective(45.0, window.getSize().x / window.getSize().y, 1.0, 500.0);
 	glMatrixMode(GL_MODELVIEW);
+	glTranslatef(0,0,-8);
+	glEnable(GL_CULL_FACE);
 
 	// glNewList(index, GL_COMPILE);
 	// Creates a new Display List
@@ -52,65 +54,59 @@ void Game::initialize()
 	glNewList(index, GL_COMPILE);
 	glBegin(GL_TRIANGLES);
 	{
-		
 		glColor3f(0.0f, 1.0f, 1.0f);
-		glVertex3f(v3.getX(), 1.0f, -5.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f); 
-		glVertex3f(-1.0f, -1.0f, -5.0f); 
+		glVertex3f(1.0f, 1.0f, 1.0f); //8
+		glVertex3f(-1.0f, 1.0f, 1.0f); //1
+		glVertex3f(-1.0f, -1.0f, 1.0f); //4
 
-		glVertex3f(v3.getX(), 1.0f, -5.0f); 
-		glVertex3f(-1.0f, -1.0f, -5.0f); 
-		glVertex3f(1.0f, -1.0f, -5.0f); 
+		glVertex3f(1.0f, 1.0f, 1.0f); //8
+		glVertex3f(-1.0f, -1.0f, 1.0f); //4
+		glVertex3f(1.0f, -1.0f, 1.0f); //7
 
 		glColor3f(0.0f, 0.0f, 0.5f);
-		glVertex3f(-1.0f, 1.0f, -15.0f); 
-		glVertex3f(1.0f, 1.0f, -15.0f); 
-		glVertex3f(v3.getX(), 1.0f, -5.0f); 
+		glVertex3f(1.0f, 1.0f, -1.0f); //5
+		glVertex3f(-1.0f, 1.0f, -1.0f); //2
+		glVertex3f(1.0f, 1.0f, 1.0f); //8
 
-
-		glVertex3f(v3.getX(), 1.0f, -5.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f);
-		glVertex3f(-1.0f, 1.0f, -15.0f); 
-
+		glVertex3f(1.0f, 1.0f, 1.0f);//8
+		glVertex3f(-1.0f, 1.0f, 1.0f);//1
+		glVertex3f(-1.0f, 1.0f, -1.0f); //2
 		
 		glColor3f(0.5f, 1.0f, 0.0f);
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
-		glVertex3f(1.0f, -1.0f, -15.0f); 
-		glVertex3f(1.0f, -1.0f, -5.0f); 
-
-		glVertex3f(1.0f, -1.0f, -5.0f); 
-		glVertex3f(-1.0f, -1.0f, -5.0f); 
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
-
+		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(1.0f, -1.0f, 1.0f); //7
+		glVertex3f(1.0f, -1.0f, -1.0f); //6
+		
+		glVertex3f(-1.0f, -1.0f, 1.0f); //4
+		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(1.0f, -1.0f, 1.0f); //7
 		
 		glColor3f(1.0f, 0.5f, 1.0f);
-		glVertex3f(-1.0f, 1.0f, -5.0f); 
-		glVertex3f(-1.0f, 1.0f, -15.0f); 
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
+		glVertex3f(-1.0f, 1.0f, 1.0f); //1
+		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(-1.0f, 1.0f, -1.0f); //2
 
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
-		glVertex3f(-1.0f, -1.0f, -5.0f); 
-		glVertex3f(-1.0f, 1.0f, -5.0f); 
-
+		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(-1.0f, -1.0f, 1.0f); //4
+		glVertex3f(-1.0f, 1.0f, 1.0f); //1
 		
 		glColor3f(1.0f, 0.0f, 1.0f);
-		glVertex3f(v3.getX(), 1.0f, -5.0f); 
-		glVertex3f(1.0f, 1.0f, -15.0f); 
-		glVertex3f(1.0f, -1.0f, -15.0f); 
+		glVertex3f(1.0f, 1.0f, 1.0f); //8////////////////////////////////////////////
+		glVertex3f(1.0f, 1.0f, -1.0f); //5
+		glVertex3f(1.0f, -1.0f, 1.0f); //7
 
-		glVertex3f(1.0f, -1.0f, -15.0f); 
-		glVertex3f(1.0f, -1.0f, -5.0f); 
-		glVertex3f(v3.getX(), 1.0f, -5.0f); 
-
+		glVertex3f(1.0f, -1.0f, -1.0f); //6
+		glVertex3f(1.0f, -1.0f, 1.0f); //7
+		glVertex3f(1.0f, 1.0f, -1.0f); //5////////////////////////////////////////////
 		
 		glColor3f(0.5f, 1.0f, 0.5f);
-		glVertex3f(1.0f, 1.0f, -15.0f); 
-		glVertex3f(-1.0f, 1.0f, -15.0f); 
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
+		glVertex3f(1.0f, 1.0f, -1.0f); //5
+		glVertex3f(-1.0f, 1.0f, -1.0f); //2
+		glVertex3f(1.0f, 1.0f, -1.0f); //6
 
-		glVertex3f(-1.0f, -1.0f, -15.0f); 
-		glVertex3f(1.0f, -1.0f, -15.0f); 
-		glVertex3f(1.0f, 1.0f, -15.0f); 
+		glVertex3f(-1.0f, -1.0f, -1.0f); //3
+		glVertex3f(1.0f, -1.0f, -1.0f); //6
+		glVertex3f(-1.0f, 1.0f, -1.0f); //2
 	}
 
 	glEnd();
@@ -133,14 +129,20 @@ void Game::update()
 			updatable = false;
 	}
 
-	if (updatable)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 	{
-		rotationAngle += 0.005f;
-
-		if (rotationAngle > 360.0f)
-		{
-			rotationAngle -= 360.0f;
-		}
+		//glLoadIdentity();
+		glRotatef(rotationAngle += 0.1f, 0.0f, 0.0f, 1.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+	{
+		//glLoadIdentity();
+		glRotatef(rotationAngle += 0.1f, 0.0f, 1.0f, 0.0f);
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Y))
+	{
+		//glLoadIdentity();
+		glRotatef(rotationAngle += 0.1f, 1.0f, 0.0f, 0.0f);
 	}
 
 	cout << "Update up" << endl;
@@ -153,8 +155,8 @@ void Game::draw()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	cout << "Drawing Cube " << endl;
-	glLoadIdentity();
-	glRotatef(rotationAngle, 0, 0, 1); // Rotates the camera on Y Axis
+	//glLoadIdentity();
+	//glRotatef(rotationAngle, 0, 0, 1); // Rotates the camera on Y Axis
 
 	glCallList(1);
 
