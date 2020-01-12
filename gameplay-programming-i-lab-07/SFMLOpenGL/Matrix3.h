@@ -18,8 +18,8 @@ public:
 	Vector3 Column(int i);
 	Matrix3 Inverse(Matrix3 M1);
 	Matrix3 Rotation(int _angle);
-	Matrix3 Translate(int dx, int dy);
-	Matrix3 Scale(int dx, int dy);
+	static Matrix3 Translate(int dx, int dy);
+	static Matrix3 Scale(int dx, int dy);
 	Vector3 operator*(Vector3 V1);
 	Matrix3 Transpose(Matrix3 M1);
 

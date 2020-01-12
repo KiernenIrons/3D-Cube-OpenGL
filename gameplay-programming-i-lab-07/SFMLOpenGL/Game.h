@@ -4,11 +4,10 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 
-#include <Vector3.h>
-
+#include "Vector3.h"
+#include "Matrix3.h"
 
 using namespace std;
-using namespace sf;
 
 class Game
 {
@@ -17,16 +16,29 @@ public:
 	~Game();
 	void run();
 private:
-	Window window;
+	sf::Window window;
 	bool isRunning = false;
 	void initialize();
 	void update();
 	void draw();
 	void unload();
 
-	GLuint index;
-	Clock clock;
-	Time elapsed;
+	Vector3 m_points[8]
+	{
+		{ -1.0f, -1.0f, 1.0f },
+		{ 1.0f, -1.0f, 1.0f },
+		{ 1.0f, 1.0f, 1.0f },
+		{ -1.0f, 1.0f, 1.0f },
 
-	float rotationAngle = 0.0f;
+		{ -1.0f, -1.0f, -1.0f },
+		{ 1.0f, -1.0f, -1.0f },
+		{ 1.0f, 1.0f, -1.0f },
+		{ -1.0f, 1.0f, -1.0f },
+	};
+
+	GLuint index;
+	sf::Clock clock;
+	sf::Time elapsed;
+
+	float rotationAngle = 1.0f;
 };
